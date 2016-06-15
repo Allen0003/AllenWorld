@@ -72,7 +72,7 @@ jquery hide() hide matched elements.
           <li><a href="dynamicForm.html">DForm</a></li>
         </ul>
       </div>
-      <!--/.nav-collapse -->
+      <!--.nav-collapse -->
     </div>
   </nav>
   <!--Navbars-->
@@ -82,8 +82,7 @@ jquery hide() hide matched elements.
       <h1>Dynamic input</h1>
     </div>
     <form class="form-horizontal" role="form">
-      <div class="form-group  dispalyInline">
-
+      <div class="form-group">
         <label class="col-sm-2 control-label" for="focusedInput">Focused</label>
         <div class="col-xs-9">
           <input class="form-control" id="focusedInput" name="focusedInput"
@@ -93,7 +92,7 @@ jquery hide() hide matched elements.
           width="30" class="floatLeft">
       </div>
 
-      <div class="form-group dispalyInline">
+      <div class="form-group">
         <label for="inputPassword" class="col-sm-2 control-label">Disabled</label>
         <div class="col-xs-9">
           <input class="form-control" id="disabledInput" type="text" disabled>
@@ -102,7 +101,7 @@ jquery hide() hide matched elements.
           width="30" class="floatLeft">
       </div>
       <fieldset disabled>
-        <div class="form-group dispalyInline">
+        <div class="form-group">
           <label for="disabledTextInput" class="col-sm-2 control-label">Fieldset
             disabled</label>
           <div class="col-xs-9">
@@ -121,7 +120,7 @@ jquery hide() hide matched elements.
 
         </div>
       </fieldset>
-      <div class="form-group has-success has-feedback dispalyInline">
+      <div class="form-group has-success has-feedback">
         <label class="col-sm-2 control-label" for="inputSuccess">
           Input with success and icon</label>
         <div class="col-xs-9">
@@ -131,7 +130,7 @@ jquery hide() hide matched elements.
         <img src="icon/add.png" alt="add one more same input" height="30"
           width="30" class="floatLeft">
       </div>
-      <div class="form-group has-warning has-feedback dispalyInline">
+      <div class="form-group has-warning has-feedback">
         <label class="col-sm-2 control-label" for="inputWarning">
           Input with warning and icon</label>
         <div class="col-xs-9">
@@ -142,7 +141,8 @@ jquery hide() hide matched elements.
         <img src="icon/add.png" alt="add one more same input" height="30"
           width="30" class="floatLeft">
       </div>
-      <div class="form-group has-error has-feedback dispalyInline">
+
+      <div class="form-group has-error has-feedback">
         <label class="col-sm-2 control-label" for="inputError">
           Input with error and icon</label>
         <div class="col-xs-9">
@@ -155,7 +155,6 @@ jquery hide() hide matched elements.
     </form>
   </div>
   <!-- container -->
-
 
   <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -172,10 +171,6 @@ jquery hide() hide matched elements.
 .floatLeft {
   float: left;
 }
-
-.dispalyInline {
-  display: inline;
-}
 </style>
 
 <script>
@@ -190,6 +185,7 @@ jquery hide() hide matched elements.
         var targetTag = $(this).parent().clone();
         targetTag.find('img').attr("src", "icon/del.png").addClass(
             'del').prop("alt", "delete this input row");
+
         var temp = $(this).parent();
         targetTag.insertAfter(temp).hide().slideDown('slow');
       });
