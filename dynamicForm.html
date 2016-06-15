@@ -1,8 +1,6 @@
 <!--
 jquery hide() hide matched elements.
-
 -->
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,12 +13,12 @@ jquery hide() hide matched elements.
 <meta name="author" content="Allen">
 <link rel="icon" href="icon/Allen icon.ico">
 
-<title>Theme Template for Bootstrap</title>
+<title>Allen's Template</title>
 
 <!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
 <!-- Bootstrap theme -->
-<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.css" rel="stylesheet">
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
@@ -79,43 +77,43 @@ jquery hide() hide matched elements.
   </nav>
   <!--Navbars-->
 
-
   <div class="container theme-showcase" role="main">
     <div class="page-header">
       <h1>Dynamic input</h1>
     </div>
     <form class="form-horizontal" role="form">
-      <div class="form-group">
-        <label class="col-sm-2 control-label">Focused</label>
-        <div class="col-sm-9">
+      <div class="form-group  dispalyInline">
+
+        <label class="col-sm-2 control-label" for="focusedInput">Focused</label>
+        <div class="col-xs-9">
           <input class="form-control" id="focusedInput" name="focusedInput"
-            type="text" value="Click to focus">
+            type="text" placeholder="Click to focus">
         </div>
         <img src="icon/add.png" alt="add one more same input" height="30"
-          width="30">
+          width="30" class="floatLeft">
       </div>
 
-      <div class="form-group">
+      <div class="form-group dispalyInline">
         <label for="inputPassword" class="col-sm-2 control-label">Disabled</label>
-        <div class="col-sm-9">
+        <div class="col-xs-9">
           <input class="form-control" id="disabledInput" type="text" disabled>
         </div>
         <img src="icon/add.png" alt="add one more same input" height="30"
-          width="30">
+          width="30" class="floatLeft">
       </div>
       <fieldset disabled>
-        <div class="form-group">
+        <div class="form-group dispalyInline">
           <label for="disabledTextInput" class="col-sm-2 control-label">Fieldset
             disabled</label>
-          <div class="col-sm-9">
+          <div class="col-xs-9">
             <input type="text" id="disabledTextInput" class="form-control">
           </div>
           <img src="icon/add.png" alt="add one more same input" height="30"
-            width="30">
+            width="30" class="floatLeft">
         </div>
         <div class="form-group">
           <label for="disabledSelect" class="col-sm-2 control-label"></label>
-          <div class="col-sm-9">
+          <div class="col-xs-9">
             <select id="disabledSelect" class="form-control">
               <option>Disabled select</option>
             </select>
@@ -123,49 +121,38 @@ jquery hide() hide matched elements.
 
         </div>
       </fieldset>
-      <div class="form-group has-success has-feedback">
+      <div class="form-group has-success has-feedback dispalyInline">
         <label class="col-sm-2 control-label" for="inputSuccess">
           Input with success and icon</label>
-        <div class="col-sm-9">
+        <div class="col-xs-9">
           <input type="text" class="form-control" id="inputSuccess">
           <span class="glyphicon glyphicon-ok form-control-feedback"></span>
         </div>
         <img src="icon/add.png" alt="add one more same input" height="30"
-          width="30">
+          width="30" class="floatLeft">
       </div>
-
-
-
-
-      <div class="form-group has-warning has-feedback" style="display:inline">
+      <div class="form-group has-warning has-feedback dispalyInline">
         <label class="col-sm-2 control-label" for="inputWarning">
           Input with warning and icon</label>
-        <div class="col-sm-9">
+        <div class="col-xs-9">
           <input type="text" class="form-control w-80" id="inputWarning">
           <span
             class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
         </div>
         <img src="icon/add.png" alt="add one more same input" height="30"
-          width="30" class="w-10">
+          width="30" class="floatLeft">
       </div>
-
-
-
-
-
-
-      <div class="form-group has-error has-feedback">
+      <div class="form-group has-error has-feedback dispalyInline">
         <label class="col-sm-2 control-label" for="inputError">
           Input with error and icon</label>
-        <div class="col-sm-9">
+        <div class="col-xs-9">
           <input type="text" class="form-control" id="inputError"> <span
             class="glyphicon glyphicon-remove form-control-feedback"></span>
         </div>
         <img src="icon/add.png" alt="add one more same input" height="30"
-          width="30">
+          width="30" class="floatLeft">
       </div>
     </form>
-
   </div>
   <!-- container -->
 
@@ -175,12 +162,22 @@ jquery hide() hide matched elements.
   <!-- Placed at the end of the document so the pages load faster -->
   <script
     src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/docs.min.js"></script>
+  <script src="js/bootstrap.js"></script>
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 
   <script src="js/ie10-viewport-bug-workaround.js"></script>
 </body>
+
+<style type="text/css">
+.floatLeft {
+  float: left;
+}
+
+.dispalyInline {
+  display: inline;
+}
+</style>
+
 <script>
   $(document).on("click", '.del', function(e) {
     $(this).parent().slideUp("normal", function() {
@@ -191,8 +188,8 @@ jquery hide() hide matched elements.
   $('img').click(
       function() {
         var targetTag = $(this).parent().clone();
-        targetTag.find('img').attr("src", "icon/del.png")
-            .addClass('del').prop("alt", "delete this input row");
+        targetTag.find('img').attr("src", "icon/del.png").addClass(
+            'del').prop("alt", "delete this input row");
         var temp = $(this).parent();
         targetTag.insertAfter(temp).hide().slideDown('slow');
       });
